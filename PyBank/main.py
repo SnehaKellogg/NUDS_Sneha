@@ -1,6 +1,7 @@
 #Import necessary packages
 import os
 import csv
+import sys
 
 #define the file used
 bankbudget = os.path.join("Resources", "budget_data.csv")
@@ -48,6 +49,7 @@ with open(bankbudget, newline="") as csvfile:
 
 
     #Perform analysis and print the results:
+    sys.stdout = open('finances.txt', 'w')
     print(f"Financial Analysis \n"
           f"-----------------------\n"
           f"Total Months: {len(column['Date'])} \n"
